@@ -18,4 +18,9 @@ const server = http.createServer(app);
 // http와 ws 모두 이용하기 위함
 const wss = new WebSocket.Server({ server });
 
+function handleConnection(socket) {
+  console.log(socket);
+}
+wss.on("connection", handleConnection);
+
 server.listen(3000, handleListen);
